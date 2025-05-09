@@ -33,7 +33,7 @@ status = solver.Solve()
 # print solution if feasible or infeasible
 if status == pywraplp.Solver.OPTIMAL:
     print("\nSolution:")
-    print(f"Objective value = {solver.Objective().Value():0.1f}")
+    print(f"Objective value (best profit) = {solver.Objective().Value():0.1f}")
     print(f"x1 = {x1.solution_value():0.1f}")
     print(f"x2 = {x2.solution_value():0.1f}")
     print(f"x3 = {x3.solution_value():0.1f}")
