@@ -1,5 +1,5 @@
 '''
-    Linear programming problem solved via OR tools solver - utilizing simplex method
+    Linear programming problem solved via OR tools solver - solved with simplex algorithm.
 
     Problem:
 

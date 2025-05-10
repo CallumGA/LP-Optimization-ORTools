@@ -1,5 +1,5 @@
 '''
-    Linear programming problem built, solved and explored with MathOpt
+    Linear programming problem built, solved and explored with MathOpt - solved with simplex algorithm.
 
     Problem:
 
