@@ -33,7 +33,6 @@ print("x1:", result.variable_values()[x1])
 print("x2:", result.variable_values()[x2])
 print("x3:", result.variable_values()[x3])
 
-
 '''
 Output: 
 
