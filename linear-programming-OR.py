@@ -1,13 +1,14 @@
 '''
-    Linear programming problem solved via OR tools solver - solved with simplex algorithm.
+    Linear programming problem solved via OR tools mathopt solver - solved with simplex algorithm.
+
+    Includes just lower bounds for variables, as well as linear constraints.
 
     Problem:
+    Maximize:     z = 6x₁ + 14x₂ + 13x₃
 
-    Maximize:     3x + 4y
-
-    Subject to:   x + 2y ≤ 14
-                  3x - y ≥ 0
-                  x - y ≤ 2
+    Subject to:   0.5x₁ + 2x₂ + x₃ ≤ 24
+                  x₁ + 2x₂ + 4x₃ ≤ 60
+                  x₁ ≥ 0, x₂ ≥ 0, x₃ ≥ 0
 '''
 
 from ortools.linear_solver import pywraplp

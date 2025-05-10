@@ -1,8 +1,9 @@
 '''
     Linear programming problem built, solved and explored with MathOpt - solved with simplex algorithm.
 
-    Problem:
+    Includes upper and lower bounds for variables.
 
+    Problem:
     Maximize:     x + 2y
 
     Subject to:   x + y ≤ 1.5

@@ -1,8 +1,9 @@
 '''
     Linear programming problem solved via OR tools mathopt solver - solved with simplex algorithm.
 
-    Problem:
+    Includes no upper or lower bounds for variables, but includes multiple linear constraints.
 
+    Problem:
     Maximize:     3x + 4y
 
     Subject to:   x + 2y ≤ 14
