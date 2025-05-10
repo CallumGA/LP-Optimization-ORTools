@@ -41,10 +41,10 @@ status = solver.Solve()
 # print solution if feasible or infeasible
 if status == pywraplp.Solver.OPTIMAL:
     print("\nSolution:")
-    print(f"Objective value (best profit) = {solver.Objective().Value():0.1f}")
-    print(f"x1 = {x1.solution_value():0.1f}")
-    print(f"x2 = {x2.solution_value():0.1f}")
-    print(f"x3 = {x3.solution_value():0.1f}")
+    print(f"Optimal Objective value (best profit) = {solver.Objective().Value():0.1f}")
+    print(f"x1 = {x1.solution_value():0f}")
+    print(f"x2 = {x2.solution_value():0f}")
+    print(f"x3 = {x3.solution_value():0f}")
 
 else:
     print("The problem does not have an optimal solution.")
@@ -62,5 +62,7 @@ x1 = 36.0 (36 x 600 = $21,600 profit)
 x2 = 0.0 (0 x 1,400 = $0 profit)
 x3 = 6.0 (6 x 1,300 = $7,800 profit)
 
-Explanation: Therefore, the optimal solution is producing 36 flat beds, 0 economy, and 6 luxury trailers for a total profit of $29,400 within the given constraints.
+Explanation: 
+Therefore, the optimal solution is producing 36 flat beds, 0 economy, and 6 luxury trailers for a total profit of $29,400 within the given constraints.
+
 '''

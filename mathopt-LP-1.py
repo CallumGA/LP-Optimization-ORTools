@@ -29,7 +29,7 @@ if result.termination.reason != mathopt.TerminationReason.OPTIMAL:
 
 # print solution
 print("MathOpt solve succeeded")
-print("Objective value:", result.objective_value())
+print("Optimal Objective value:", result.objective_value())
 print("x:", result.variable_values()[x])
 print("y:", result.variable_values()[y])
 
