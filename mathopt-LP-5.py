@@ -14,8 +14,8 @@ from ortools.math_opt.python import mathopt
 
 model = mathopt.Model(name='Linear Programming')
 
-x = model.add_variable(name='x', lb=0)
-y = model.add_variable(name='y', lb=0)
+x = model.add_integer_variable(name='x', lb=0)
+y = model.add_integer_variable(name='y', lb=0)
 
 model.add_linear_constraint(25*x + 12*y <= 1400)
 model.add_linear_constraint(5*y >= 2*x)
@@ -23,7 +23,7 @@ model.add_linear_constraint(x + 0.5*y <= 20)
 
 model.maximize(50000*x + 20000*y)
 
-result = mathopt.solve(model, mathopt.SolverType.GLOP)
+result = mathopt.solve(model, mathopt.SolverType.GSCIP)
 
 print("MathOpt solve succeeded")
 print("Optimal Objective value:", result.objective_value())
