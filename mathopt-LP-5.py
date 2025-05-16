@@ -1,6 +1,8 @@
 '''
-Model:
+300501101 - Callum Anderson
+Assignment 1, Q1, Pt. 2
 
+Model:
 max
     z = 50,000x + 20,000y
 s.t.
