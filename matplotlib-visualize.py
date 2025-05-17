@@ -1,4 +1,8 @@
-# visualize the LP model from pulp-LP.py using matplotlib
+'''
+Notes:
+    Visualize the LP model from pulp-LP.py using matplotlib.
+    Plot only x1 and x2, since x3 is 0 in the final solution
+'''
 
 import matplotlib.pyplot as plt
 
