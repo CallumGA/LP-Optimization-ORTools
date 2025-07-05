@@ -8,7 +8,7 @@ s.t:    4x1 + 2x2 ≥ 21
         x1, y1 ≥ 0
 """
 
-from pulp import LpProblem, LpVariable, LpStatus, LpMinimize
+from pulp import LpProblem, LpVariable, LpStatus, LpMinimize, PULP_CBC_CMD
 
 model = LpProblem(name="Dual-LP-assignment-2", sense=LpMinimize)
 
@@ -20,7 +20,7 @@ model += (2*x1 + 4*x2 >= 19, "x2")
 
 model += 5*x1 + 6*x2
 
-model.solve()
+model.solve(PULP_CBC_CMD(msg=False))
 
 print(f"Status: {LpStatus[model.status]}")
 print(f"x1 = {x1.value()}")
