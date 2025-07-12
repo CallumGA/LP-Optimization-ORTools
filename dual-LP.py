@@ -2,27 +2,27 @@
 300501101 - Callum Anderson
 Assignment 2, Q1, Pt. 2
 
-min:    5x1 + 6x2 
-s.t:    4x1 + 2x2 ≥ 21
-        2x1 + 4x2 ≥ 19
-        x1, y1 ≥ 0
+max:    21y1 + 19y2
+s.t:    4y1 + 2y2 ≤ 5
+        2y1 + 4y2 ≤ 6
+        y1, y2 ≥ 0
 """
 
-from pulp import LpProblem, LpVariable, LpStatus, LpMinimize, PULP_CBC_CMD
+from pulp import LpProblem, LpVariable, LpStatus, PULP_CBC_CMD, LpMaximize
 
-model = LpProblem(name="Dual-LP-assignment-2", sense=LpMinimize)
+model = LpProblem(name="Dual-LP-assignment-2", sense=LpMaximize)
 
-x1 = LpVariable(name="x1", lowBound=0) # lowBound = 0 covers "x1, y1 ≥ 0"
-x2 = LpVariable(name="x2", lowBound=0) # lowBound = 0 covers "x1, y1 ≥ 0"
+y1 = LpVariable(name="y1", lowBound=0) # lowBound = 0 covers "y1, y2 ≥ 0"
+y2 = LpVariable(name="y2", lowBound=0)
 
-model += (4*x1 + 2*x2 >= 21, "x1")
-model += (2*x1 + 4*x2 >= 19, "x2")
+model += (4 * y1 + 2 * y2 <= 5, "y1")
+model += (2 * y1 + 4 * y2 <= 6, "y2")
 
-model += 5*x1 + 6*x2
+model += 21 * y1 + 19 * y2
 
 model.solve(PULP_CBC_CMD(msg=False))
 
 print(f"Status: {LpStatus[model.status]}")
-print(f"x1 = {x1.value()}")
-print(f"x2 = {x2.value()}")
+print(f"y1 = {y1.value()}")
+print(f"y2 = {y2.value()}")
 print(f"Objective value = {model.objective.value()}")
